@@ -50,7 +50,7 @@ app.get('/api/candidates', (req, res) => {
 });
 
 // GET a single candidate
-app.get('/api/candidates/:id', (req, res) => {
+app.get('/api/candidate/:id', (req, res) => {
     const sql = `SELECT candidates.*, parties.name
     AS party_name
     FROM candidates 
@@ -96,7 +96,7 @@ app.post('/api/candidate', ({ body }, res) => {
 });
 
 // Update a candidate's party
-app.put('/api/candidates/:id', (req, res) => {
+app.put('/api/candidate/:id', (req, res) => {
     const errors = inputCheck(req.body, 'party_id');
 
     if (errors) {
